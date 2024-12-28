@@ -1,0 +1,16 @@
+logging:
+  level: INFO
+  appenders:
+    - type: console
+    - type: file
+      currentLogFilename: ./logs/application.log
+      archivedLogFilenamePattern: ./logs/application-%d{yyyy-MM-dd}.log.gz
+      archivedFileCount: 7
+      timeZone: UTC
+      logFormat: "[%d{HH:mm:ss.SSS}][%-5level] %logger{36} - %msg%n"
+database:
+  dialect: org.hibernate.dialect.MySQLDialect
+  driverClass: com.mysql.cj.jdbc.Driver
+  user: root
+  password: root@123
+  url: jdbc:mysql://localhost:3306/library-database
